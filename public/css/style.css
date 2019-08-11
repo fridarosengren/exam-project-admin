@@ -1,0 +1,108 @@
+body {
+    background-color: #eee;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+}
+.col-sm-6:nth-child(1) {
+    border-right: 1px solid #ccc;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+h2 {
+    font-size: 1.6em;
+}
+h3 {
+    font-size: 1.3em;
+    text-decoration: underline;
+}
+h4 {
+    font-size: 1.1em;
+}
+
+.exp-text {
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+#bottom-header {
+    padding: 0px;
+}
+
+#top-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+}
+
+#top-header .container {
+    padding: 0px;
+}
+
+#top-header img {
+    width: 150px;
+}
+
+#bottom-header {
+    background-color: #fff;
+    padding: 0px;
+}
+#bottom-header .container {
+    padding: 0px;
+}
+
+#login-form {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 20vh;
+    background-color: #fff;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.list-group-item img {
+    width: 200px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#current-image img {
+    width: 60%;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-area {
+    text-align: right;
+}
+
+.template-links .col-sm-3 {
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.template-links {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px){
+    .user-area {
+        text-align: center;
+    }
+
+    .site-name {
+        text-align: center;
+        font-size: 0.9em;
+    }
+}

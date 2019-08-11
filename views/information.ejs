@@ -1,0 +1,62 @@
+<% include partials/head %>
+<% include partials/header %>
+
+<!-- Page heading -->
+<div class="container">
+    <h2>Hantera informationsmall</h2>
+</div><br />
+
+<!-- Create/update form -->
+<section class="container">
+    <h3>Ändra information</h3>
+    <form method="POST" action="/templates/information">
+        <div class="form-group">
+            <label for="infoName">Avdelning</label><br />
+            <input type="text" class="form-control" name="infoName" id="infoName" />
+        </div>
+        <div class="form-group">
+            <label for="infoFieldOne">Fält 1</label><br />
+            <textarea class="form-control" name="infoFieldOne" id="infoFieldOne"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="infoFieldTwo">Fält 2</label><br />
+            <textarea class="form-control" name="infoFieldTwo" id="infoFieldTwo"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Spara</button>
+    </form><br />
+
+    <!-- Display error/success messages -->
+    <% include partials/alerts %>
+
+    <!-- Add CKEditor 4 to form -->
+    <script>
+            CKEDITOR.replace( 'infoFieldOne' );
+            CKEDITOR.replace( 'infoFieldTwo' );
+    </script>
+
+</section><br /><!--//container-->
+
+<!-- Info image section -->
+<section class="container">
+    <h3>Ändra bild</h3>
+    <div class="row">
+        <div class="col-sm">
+            <!-- Image form -->
+            <form method="POST" action="/templates/information/image" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="infoImage">Välj bild</label>
+                    <input type="file" class="form-control-file" name="infoImage" />
+                    <span class="exp-text">För bästa resultat, välj en bild i porträtt-läge. Max 1MB stor, JPG eller PNG.</span><br />
+                </div>
+                <button class="btn btn-primary" type="submit">Spara bild</button>
+            </form><br />
+        </div>
+        <!-- Current image section -->
+        <div class="col-sm">
+            <div id="current-image" class="text-center"></div>
+        </div>
+    </div><!-- // Row -->
+</section><!--//container-->
+
+<!-- Include footer -->
+<% include partials/footer %>

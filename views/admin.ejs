@@ -1,0 +1,35 @@
+<% include partials/head %>
+<% include partials/header %>
+
+<!-- Page heading -->
+<div class="container">
+    <h2>Hantera användare</h2>
+</div><br />
+
+<!-- Main section -->
+<section class="container">
+    <!-- Add new user form -->
+    <h3>Lägg till ny användare</h3>
+    <form action="http://localhost:3000/users/admin" method="POST">
+        <div class="form-group">
+            <label for="email">Email</label><br />
+            <input type="email" class="form-control" name="email" />
+        </div><!-- // Form-group -->
+        <button class="btn btn-primary" type="submit">Skapa användare</button>
+    </form><br />
+
+    <!-- Display error/success messages -->
+    <% include partials/alerts %>
+
+</section><!--//container-->
+<br />
+
+<!-- User list -->
+<section class="container">
+    <!-- Skapa ny användare, skicka ut nytt lösenord, ta bort användare -->
+    <h3>Användarlista</h3>
+    <ul id="ulist" class="list-group"></ul>
+</section>
+
+<!-- Include footer -->
+<% include partials/footer %>

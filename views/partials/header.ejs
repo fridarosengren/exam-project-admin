@@ -1,0 +1,73 @@
+<!-- Header -->
+<header class="header">
+    <div id="top-header"> 
+      <div class="container">
+        <div class="row">
+          <div class="col-md site-name">
+            <h1><a href="/dashboard">Presentationssystemet</a></h1>
+          </div>
+
+          <div class="col-md user-area">
+              Inloggad som: 
+              <% if(locals.loggedInUser) { %>
+                <%= loggedInUser %>
+                <%}%>
+            <a href="/users/account" class="btn btn-primary">Mitt konto</a>
+            <a href="/logout" class="btn btn-danger">Logga ut</a>
+          </div>
+        </div>
+      </div>
+    </div><!-- //top-header -->
+
+  <!-- Bottom header navigation -->
+<div id="bottom-header">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard"
+              >Hem </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/templates/info">Information</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/templates/employees">Personal</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="/templates/news"
+              >Aktuellt</a
+            >
+          </li>
+          <!-- Admin only page link -->
+          <% if(locals.loggedInUser == "exarbetemiun") { %>
+            <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="/users/admin"
+                  >Hantera användare</a
+                >
+              </li>
+            <%}%>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- Bottom header-->
+</header>
+<br />

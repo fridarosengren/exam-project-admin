@@ -1,0 +1,78 @@
+<% include partials/head %>
+<% include partials/header %>
+
+<div class="container">
+    <h2>Hantera aktuellt</h2>
+</div><br />
+
+<!-- Add news form -->
+<section class="container">
+    <h3>Lägg till nyhet</h3>
+    <form action="/templates/news" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="heading">Rubrik</label><br />
+            <input type="text" class="form-control" name="heading" />
+        </div><!-- // Form-group -->
+        <div class="form-group">
+            <label for="text">Text</label><br />
+            <textarea class="form-control" name="text" id="text"></textarea>
+        </div><!-- // Form-group -->
+        <div class="form-group">
+            <label for="newsImage">Bild (Valfritt)</label>
+            <input type="file" class="form-control-file" name="newsImage" />
+            <span class="exp-text">För bästa resultat, välj en bild i landskaps-läge. Max 1MB stor, JPG eller PNG.</span><br />
+        </div><!-- // Form-group -->
+        <button class="btn btn-primary" type="submit">Skapa nyhet</button>
+    </form><br />
+
+    <!-- Display error/success messages -->
+    <% include partials/alerts %>
+
+    <!-- Add CKEditor 4 to form -->
+    <script>
+        CKEDITOR.replace( 'text' );
+    </script>
+
+</section><br /><!-- //container -->
+
+<!-- Edit/delete news -->
+<div class="container">
+    <h3>Redigera/ta bort</h3>
+    <ul id="newsList" class="list-group"></ul>
+</div>
+
+<!-- Edit form modal -->
+<section class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ändra nyhet</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Edit form -->
+                <form>
+                    <div class="form-group">
+                        <label for="heading">Rubrik</label><br />
+                        <input type="text" class="form-control" name="heading" id="newsEditHeading" />
+                    </div><!-- // Form-group -->
+                    <div class="form-group">
+                        <label for="newsEditText">Text</label><br />
+                        <textarea class="form-control" name="newsEditText" id="newsEditText"></textarea>
+                    </div><!-- // Form-group -->
+                    <button class="btn btn-primary submitNewsBtn" type="submit">Spara</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Add CKEditor 4 to form -->
+ <script>
+        CKEDITOR.replace( 'newsEditText' );
+</script>
+
+<!-- Include footer -->
+<% include partials/footer %>

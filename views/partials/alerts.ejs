@@ -1,0 +1,9 @@
+<% if(locals.errormsg) { %>
+    <div class="alert alert-danger" role="alert">
+        <%= errormsg %>
+    </div>
+<%} else if(locals.successmsg) { %>
+    <div class="alert alert-success" role="alert">
+        <%= successmsg %>
+    </div>
+<%} %>

@@ -1,0 +1,34 @@
+<% include partials/head %>
+<% include partials/header %>
+
+<!-- Page heading -->
+<div class="container">
+    <h2>Översikt</h2>
+</div><br />
+
+<!-- Work in progress -->
+<main class="container">
+    <h3>Instruktioner</h3>
+    <p>Detta är ett administrationsgränssnitt för presentationssystemet som roterar information om avdelningen.
+    Alla ändringar som görs på denna sida kommer att synas då informations-skärmen hämtar information från databasen var 30 min. </p>
+
+    <h4>Mallar</h4>
+    <p>Presentationssystemet består av tre olika mallar som kan användas för att ändra informationen som presenteras. <br />
+    Välj någon av nedanstående mallar för att börja skapa/hantera information:
+    </p><br />
+    <!-- Länkar till mallar -->
+    <div class="row template-links text-center justify-content-between">
+        <a href="/templates/info" class="col-sm-3">Information</a>
+        <a href="/templates/employees" class="col-sm-3">Personal</a>
+        <a href="/templates/news" class="col-sm-3">Aktuellt</a>
+    </div>
+</main><br />
+
+<!-- Show rotate information when finished with frontend -->
+<section class="container">
+    <p>Här kommer en version av informationen att rotera snart, för att ge en bild av hur
+    det ser ut på informations-skärmen. </p>
+</section>
+
+<!-- Include footer -->
+<% include partials/footer %>

@@ -1,0 +1,94 @@
+<% include partials/head %>
+<% include partials/header %>
+
+<!-- Page heading -->
+<div class="container">
+    <h2>Hantera personal-profiler</h2>
+</div><br />
+
+<!-- Add new employye-profile -->
+<section class="container">
+    <h3>Lägg till ny</h3>
+    <form method="POST" action="/templates/employees" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="empName">Namn</label><br />
+            <input type="text" class="form-control" name="empName" />
+        </div>
+        <div class="form-group">
+            <label for="empRoom">Rumsnummer</label><br />
+            <input type="text" class="form-control" name="empRoom" maxlength="15" />
+        </div>
+        <div class="form-group">
+            <label for="empPhoneNr">Telefonnummer</label><br />
+            <input type="text" class="form-control" name="empPhoneNr" />
+        </div>
+        <div class="form-group">
+            <label for="empDescription">Beskrivning</label>
+            <span class="exp-text"> - Kort presentation av dig själv. </span>
+            <textarea class="form-control" name="empDescription"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="empImage">Bild (Valfritt)</label>
+            <input type="file" class="form-control-file" name="empImage" />
+            <span class="exp-text">För bästa resultat, välj en bild i porträtt-läge. Max 1MB stor, JPG eller PNG.</span><br />
+        </div>
+        <button class="btn btn-primary" type="submit">Lägg till</button>
+    </form><br />
+
+    <!-- Display error/success messages -->
+    <% include partials/alerts %>
+    
+</section><!--//container-->
+<br />
+
+<!-- Edit/delete employee-profile -->
+<section class="container">
+    <h3>Redigera/ta bort</h3>
+    <ul id="empList" class="list-group"></ul>
+</section>
+
+<!-- Edit form modal -->
+<section class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ändra personal-profil</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Edit form -->
+                <form enctype="multipart/form-data" >
+                    <div class="form-group">
+                        <label for="empName">Namn</label><br />
+                        <input type="text" class="form-control" name="empEditName" id="empEditName" />
+                    </div>
+                    <div class="form-group">
+                        <label for="empRoom">Rumsnummer</label><br />
+                        <input type="text" class="form-control" name="empEditRoom" id="empEditRoom" />
+                    </div>
+                    <div class="form-group">
+                        <label for="empPhoneNr">Telefonnummer</label><br />
+                        <input type="text" class="form-control" name="empEditPhoneNr" id="empEditPhoneNr" />
+                    </div>
+                    <div class="form-group">
+                        <label for="empEditDescription">Beskrivning</label>
+                        <span class="exp-text"> - Kort presentation av dig själv. </span>
+                        <textarea class="form-control" name="empEditDescription" id="empEditDescription"></textarea>
+                    </div>
+                    <button class="btn btn-primary submitEditBtn" id="" type="submit">Spara</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add CKEditor 4 to form -->
+<script>
+        CKEDITOR.replace( 'empDescription' );
+        CKEDITOR.replace( 'empEditDescription' );
+</script>
+
+<!-- Include footer -->
+<% include partials/footer %>
